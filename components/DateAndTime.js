@@ -1,15 +1,15 @@
 import { getWeekDay, getTime, getAMPM } from "../services/helpers";
 import styles from "./DateAndTime.module.css";
 
-export const DateAndTime = ({ weatherData, unitSystem }) => {
+export const DateAndTime = ({ currentTemperature, unitSystem }) => {
   return (
     <div className={styles.wrapper}>
       <h2>
-        {`${getWeekDay(weatherData)}, ${getTime(
+        {`${getWeekDay(currentTemperature)}, ${getTime(
           unitSystem,
-          weatherData.dt,
-          weatherData.timezone
-        )} ${getAMPM(unitSystem, weatherData.dt, weatherData.timezone)}`}
+          currentTemperature.dt,
+          currentTemperature.timezone
+        )} ${getAMPM(unitSystem, currentTemperature.dt, currentTemperature.timezone)}`}
       </h2>
     </div>
   );

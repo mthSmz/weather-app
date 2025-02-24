@@ -6,15 +6,15 @@ import {
 } from "./converters";
 
 export const getWindSpeed = (unitSystem, windInMps) =>
-  unitSystem == "metric" ? windInMps : mpsToMph(windInMps);
+  unitSystem === "metric" ? windInMps : mpsToMph(windInMps);
 
 export const getVisibility = (unitSystem, visibilityInMeters) =>
-  unitSystem == "metric"
+  unitSystem === "metric"
     ? (visibilityInMeters / 1000).toFixed(1)
     : kmToMiles(visibilityInMeters / 1000);
 
 export const getTime = (unitSystem, currentTime, timezone) =>
-  unitSystem == "metric"
+  unitSystem === "metric"
     ? unixToLocalTime(currentTime, timezone)
     : timeTo12HourFormat(unixToLocalTime(currentTime, timezone));
 
@@ -25,7 +25,7 @@ export const getAMPM = (unitSystem, currentTime, timezone) =>
       : "AM"
     : "";
 
-export const getWeekDay = (weatherData) => {
+export const getWeekDay = (currentTemperature) => {
   const weekday = [
     "Sunday",
     "Monday",
@@ -36,6 +36,6 @@ export const getWeekDay = (weatherData) => {
     "Saturday",
   ];
   return weekday[
-    new Date((weatherData.dt + weatherData.timezone) * 1000).getUTCDay()
+    new Date((currentTemperature.dt + currentTemperature.timezone) * 1000).getUTCDay()
   ];
 };

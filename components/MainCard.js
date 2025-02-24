@@ -8,7 +8,8 @@ export const MainCard = ({
   description,
   iconName,
   unitSystem,
-  weatherData,
+  //weatherData,
+  currentTemperature,
 }) => {
   return (
     <div className={styles.wrapper}>
@@ -22,18 +23,18 @@ export const MainCard = ({
         src={`/icons/${iconName}.svg`}
         alt="weatherIcon"
       />
-      <h1 className={styles.temperature}>
-        {unitSystem == "metric"
-          ? Math.round(weatherData.main.temp)
-          : Math.round(ctoF(weatherData.main.temp))}
-        °{unitSystem == "metric" ? "C" : "F"}
+      <h1 className={styles.currentTemperature}>
+        {unitSystem === "metric"
+          ? Math.round(currentTemperature.temp.min)
+          : Math.round(ctoF(currentTemperature.temp.max))}
+        °{unitSystem === "metric" ? "C" : "F"}
       </h1>
       <p>
         Feels like{" "}
-        {unitSystem == "metric"
-          ? Math.round(weatherData.main.feels_like)
-          : Math.round(ctoF(weatherData.main.feels_like))}
-        °{unitSystem == "metric" ? "C" : "F"}
+        {unitSystem === "metric"
+          ? Math.round(currentTemperature.main.feels_like.day)
+          : Math.round(ctoF(currentTemperature.main.feels_like.night))}
+        °{unitSystem === "metric" ? "C" : "F"}
       </p>
     </div>
   );

@@ -5,7 +5,7 @@ export const UnitSwitch = ({ onClick, unitSystem }) => {
     <div className={styles.wrapper}>
       <p
         className={`${styles.switch} ${
-          unitSystem == "metric" ? styles.active : styles.inactive
+          unitSystem === "metric" ? styles.active : styles.inactive
         }`}
         onClick={onClick}
       >
@@ -13,7 +13,7 @@ export const UnitSwitch = ({ onClick, unitSystem }) => {
       </p>
       <p
         className={`${styles.switch} ${
-          unitSystem == "metric" ? styles.inactive : styles.active
+          unitSystem === "metric" ? styles.inactive : styles.active
         }`}
         onClick={onClick}
       >
