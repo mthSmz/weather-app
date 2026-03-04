@@ -23,10 +23,10 @@ It displays current weather conditions for a **pre-configured city** and lets us
 - API response is normalized to keep UI components stable
 - Weather codes from Open-Meteo are mapped to local icons (`public/icons`)
 
-- ## Configuration
+## Configuration
   
 - Set the city used by the app in:
-- - `config/city.json`
+  `config/city.json`
 
 ## Installation
 
