@@ -26,7 +26,14 @@ export const App = () => {
       const data = await res.json();
       setWeatherData({ ...data });
     };
+
     getData();
+
+    const intervalId = setInterval(() => {
+      getData();
+    }, 3600000);
+
+    return () => clearInterval(intervalId);
   }, []);
 
   const changeSystem = () =>
