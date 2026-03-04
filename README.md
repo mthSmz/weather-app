@@ -1,47 +1,42 @@
 # Weather App
 
-Check the current weather on any city on the planet. Switch between metric and imperial units.
+A simple weather dashboard built with Next.js.
 
-![Alt img](https://images.ctfassets.net/zlsyc9paq6sa/3uBrJ07WSM40FpolgjInHY/7d886cb4187b52194bf9b63c183a1d3a/1627637330_x.gif)
+It displays current weather conditions for a **pre-configured city** and lets users switch between **metric** and **imperial** units.
 
 ## Features
 
-1. User's ability to search cities
-
+1. Weather data powered by **Open-Meteo** (geocoding + forecast)
+2. Pre-configured location from `config/city.json` (no city search in UI)
+3. Current local date and time
+4. Temperature + "feels like" temperature
+5. Humidity, wind speed, wind direction
+6. Visibility, sunrise and sunset
+7. Metric / Imperial unit switch
+8. Loading and error states
+9. Automatic data refresh every hour
 2. Current local time and date
 
-3. Temperatures and humidity
+## Tech notes
 
-4. Wind speed and direction
+- Data is fetched through the internal API route: `pages/api/data.js`
+- API response is normalized to keep UI components stable
+- Weather codes from Open-Meteo are mapped to local icons (`public/icons`)
 
-5. Sunrise and sunset times
-
-6. Metric vs Imperial system
-
-7. Error handling and loading info
+- ## Configuration
+  
+- Set the city used by the app in:
+- - `config/city.json`
 
 ## Installation
 
-1. `git clone https://github.com/madzadev/weather-app.git`
-
+1. `git clone <your-repository-url>`
 2. `cd weather-app`
-
 3. `npm install`
+4. `npm run dev`
 
-4. Log-in to [Openweathermap.com](https://openweathermap.org/)
-
-5. Create an API key
-
-6. `cp .env.example .env.local`
-
-7. Paste API key for `OPENWEATHER_API_KEY`
-
-8. `npm run dev`
-
-## Contributions
-
-Any feature requests and pull requests are welcome!
+Then open `http://localhost:3000`.
 
 ## License
 
-The project is under [MIT license](https://choosealicense.com/licenses/mit/).
+This project is released under the [MIT license](https://choosealicense.com/licenses/mit/).
