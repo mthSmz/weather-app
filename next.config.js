@@ -1,6 +1,6 @@
 module.exports = {
   webpack: (config) => {
-    config.output.hashFunction = 'xxhash64';
+    config.output.hashFunction = 'sha256';
     return config;
   },
 };
