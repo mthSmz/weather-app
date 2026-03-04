@@ -30,7 +30,7 @@ It displays current weather conditions for a **pre-configured city** and lets us
 
 ## Installation
 
-1. `git clone <your-repository-url>`
+1. `git clone https://github.com/mthSmz/weather-app.git`
 2. `cd weather-app`
 3. `npm install`
 4. `npm run dev`
