@@ -13,9 +13,7 @@ It displays current weather conditions for a **pre-configured city** and lets us
 5. Humidity, wind speed, wind direction
 6. Visibility, sunrise and sunset
 7. Metric / Imperial unit switch
-8. Loading and error states
 9. Automatic data refresh every hour
-2. Current local time and date
 
 ## Tech notes
 
